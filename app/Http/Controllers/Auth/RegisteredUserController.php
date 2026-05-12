@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
-use App\Http\Controllers\Auth\SessionsController;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisteredUserController extends Controller
 {
@@ -24,9 +24,12 @@ class RegisteredUserController extends Controller
         ]);
 
         // 2. GUARDA: Crea el nuevo usuario en tu base de datos con esos datos.
-        User::create($attributes);
+        $user = User::create($attributes);
 
-        // 3. REDIRIGE: Manda al usuario a la página de inicio ("/").
+        // 3. LOGUEA: Inicia sesión automáticamente después de registrarse.
+        Auth::login($user);
+
+        // 4. REDIRIGE: Manda al usuario a la página de inicio ("/").
         return redirect('/');
     }
 }

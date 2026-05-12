@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Idea;
-use App\Models\Step;
 use App\Models\User;
 
 // Test 1: Verifica que una idea pertenece a un usuario

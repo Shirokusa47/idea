@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SessionsController extends Controller
 {
@@ -34,7 +33,8 @@ class SessionsController extends Controller
         $request->session()->regenerate();
 
         // 4. REDIRIGE: Lo manda a la página principal.
-        return redirect('/');
+        return redirect('/')
+            ->with('success', 'You are now logged in (Iniciaste sesion) ');
     }
 
     public function destroy()
@@ -43,6 +43,8 @@ class SessionsController extends Controller
         Auth::logout();
 
         // 2. REDIRIGE: Lo manda de vuelta a la página de inicio ("/").
-        return redirect('/');
+        return redirect('/')
+            ->with('success', 'You are now logout in (Cerraste sesion)');
+
     }
 }

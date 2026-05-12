@@ -35,7 +35,7 @@
             />
 
             <!-- Botón para enviar todo lo del <form> -->
-            <button class="button">Create Account</button>
+            <button type="submit" class="button">Create Account</button>
 
         </form>
     </div>

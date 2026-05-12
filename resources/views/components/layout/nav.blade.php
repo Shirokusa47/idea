@@ -26,7 +26,7 @@
                     <!-- csrf: Código de seguridad súper importante y obligatorio en Laravel para proteger tus formularios. -->
                     @csrf
 
-                    <button class="button">Logout</button>
+                    <button class="button" type="submit">Logout</button>
                 </form>
             @endauth
 

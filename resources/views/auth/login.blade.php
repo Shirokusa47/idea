@@ -28,7 +28,7 @@
             />
 
             <!-- Botón para enviar los datos y entrar -->
-            <button class="button">Sign In</button>
+            <button class="button" type="submit">Sign In</button>
 
         </form>
     </div>
